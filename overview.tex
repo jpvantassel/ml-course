@@ -162,7 +162,7 @@ What are the differences between Artificial Intelligence, Machine Learning, and 
 
     \begin{itemize}
         \item Acquire the data.
-        \item Prepocess the data.
+        \item Prepare the data.
         \item Split the data.
         \item Develop the Network Architecture.
         \item Select training hyperparamters.
@@ -178,7 +178,7 @@ What are the differences between Artificial Intelligence, Machine Learning, and 
 
     \begin{itemize}
         \item Can be a tedious and time consuming process.
-        \item In engineering this is generally not the case.
+        \item Generally not the case in engineering.
         \item Critical to understand the problem you are trying to solve.
     \end{itemize}
 
@@ -195,8 +195,144 @@ What are the differences between Artificial Intelligence, Machine Learning, and 
 
     \begin{itemize}
         \item Clean the data
+        \begin{itemize}
+            \item get into some form of tensor.
+            \item examples: one-hot encoding.
+        \end{itemize}
         \item Normalize the data
+        \begin{itemize}
+            \item helps neural networks (NN) performance.
+            \item store the normalization factors!
+        \end{itemize}
+        \item Feature Engineering
+        \begin{itemize}
+            \item help the network by extracting useful features.
+        \end{itemize}
+        \item Data Augmentation
+        \begin{itemize}
+            \item increase dataset size
+            \item minimal computation effort
+            \item but be careful.
+        \end{itemize}
     \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Split the Data}
+
+    \begin{itemize}
+        \item Training Set
+        \begin{itemize}
+            \item typically 60 - 70\% of total data.
+            \item used for model training.
+        \end{itemize}
+        \item Validation Set
+        \begin{itemize}
+            \item typically 10 - 20\% of total data.
+            \item used during training for hyperparameter tuning.
+            \item semi-objective measure of network performance.
+            \item concern about information leakage.
+        \end{itemize}
+        \item Testing Set
+        \begin{itemize}
+            \item typically 20\% of total data.
+            \item only used once at the very end.
+            \item only objective measure of network performance.
+        \end{itemize}
+
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Develop Network Architecture}
+
+    \begin{itemize}
+        \item Start with input and output shape.
+        \item Remainder is up to the network designer.
+        \item Remains an open question.
+        \item Requires trial and error assessing performance using the validation set.
+        \item examples: size, number, and types of hidden layers.
+    \end{itemize}
+
+    Skip additional details for now …
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Select Training Hyperparameters}
+
+    \begin{itemize}
+        \item Hyperparameters include:
+        \begin{itemize}
+            \item Optimization algorithm
+            \begin{itemize}
+                \item Examples: SGD, RMSProp, Adam.
+            \end{itemize}
+            \item Loss function
+            \begin{itemize}
+                \item Classification: Binary/Categorical Cross Entropy
+                \item Regression: L1 Loss, L2 Loss
+            \end{itemize}
+            \item Batch size
+            \begin{itemize}
+                \item typically a factor of two.
+                \item linked to the learning rate.
+            \end{itemize}
+            \item Learning Rate
+            \begin{itemize}
+                \item selected for good convergence for specific batch size
+                \item helpful to use a learning rate schedule.
+            \end{itemize}
+            \item Number of Epochs
+            \begin{itemize}
+                \item number of cycles through training data.
+                \item prevent over-fitting with early stopping
+            \end{itemize}
+
+        \end{itemize}
+
+    \end{itemize}
+
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{Train}
+
+    \begin{itemize}
+        \item Training is a numerical optimization problem.
+        \item The parameters of your network are updated to reduce your loss function.
+        \item The analyst’s job is to monitor training.
+        \item Primary concern is \textbf{overfitting}.
+        \item \textbf{Underfitting} is also a concern and may indicate need for architecture changes.
+    \end{itemize}
+
+    \begin{center}
+        \includegraphics[height=4cm]{figs/train_val_example.png}
+    \end{center}
+    
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Practice Problem: MNIST}
+
+    \begin{itemize}
+        \item Use the Keras version of the MNIST dataset:
+        \item Prepocess the data (wont worry out data augmentation for now).
+        \item Try at least three different architectures.
+        \item Try a variety (at least 10) hyperparameter combinations.
+        \item Create plots of the learning curves for the different architecture and hyperparameters.
+        \item Create a figure showing your predicted from 10 random samples from the testing set.
+        \item Run test set only once you have decided on your best architecture and report value.
+    \end{itemize}
+    \vskip20pt
+    Some starter code:
+    \begin{semiverbatim}
+!pip install Keras
+import keras          
+data = keras.datasets.mnist.load_data()
+(x_train, y_train), (x_test, y_test) = data
+    \end{semiverbatim}    
 
 \end{frame}
 
