@@ -44,8 +44,8 @@ What are the differences between Artificial Intelligence, Machine Learning, and 
 
 \begin{itemize}
     \item Started in 1980's.
-    \item Includes algorithms that allows computers to teach themselves.
-    \item Classic Examples:
+    \item Includes algorithms that allows computers to teach themselves using simple pre-defined schemes.
+    \item Examples:
     \begin{itemize}
         \item Support Vector Machines (SVM)
         \item K - Nearest Neighbor Classification
@@ -53,9 +53,9 @@ What are the differences between Artificial Intelligence, Machine Learning, and 
 \end{itemize}
 
 \begin{block}{Definition - \textit{Mitchel T. (1997)}}
-    ``Machine learning describes the process by which a computer adapts
+    Machine learning describes the process by which a computer adapts
     from experience \textbf{E}, on task \textbf{T}, to improve
-    performance \textbf{P}.''
+    performance \textbf{P}.
 \end{block}
 
 \end{frame}
@@ -68,9 +68,10 @@ What are the differences between Artificial Intelligence, Machine Learning, and 
     \begin{itemize}
         \item Started in 2010's.
         \item Special subclass of ML algorithm with potential for high-dimensional representations.
-        \item Classic Examples:
+        \item Replaces simple pre-defined schemes with simple composable units.
+        \item Examples:
         \begin{itemize}
-            \item Multi-Layer Perceptrons (MLP)
+            \item Multilayer Perceptrons (MLP)
             \item Convolutional Neural Networks (CNN)
             \item Long Short-Term Memory (LSTM)
         \end{itemize}
@@ -123,8 +124,8 @@ What are the differences between Artificial Intelligence, Machine Learning, and 
             \item Often referred to as the “Hello World” of ML.
             \item Classification problem:
                 \begin{itemize}
-                    \item Task - predict classification given image.
-                    \item Performance – accuracy.
+                    \item Task - predict classification of image.
+                    \item Performance – categorical cross entropy.
                     \item Experience – image-label pairs.
                 \end{itemize}
             \item Essentially ``solved'' with the best performing networks achieving  an error rate of 0.17\%.
@@ -149,18 +150,18 @@ What are the differences between Artificial Intelligence, Machine Learning, and 
         \item \textbf{Reinforcement Learning}: Interaction with environment.
     \end{itemize}
 
-    \begin{center}
-        \includegraphics[height=5cm]{figs/experience.png}
-    \end{center}
+    % \begin{center}
+    %     \includegraphics[height=5cm]{figs/experience.png}
+    % \end{center}
 
 \end{frame}
 
 
 \begin{frame}
 
-    \frametitle{General Approach to Supervised Learning}
+    \frametitle{General Approach to Supervised Deep Learning}
 
-    \begin{itemize}
+    \begin{enumerate}
         \item Acquire the data.
         \item Prepare the data.
         \item Split the data.
@@ -168,13 +169,13 @@ What are the differences between Artificial Intelligence, Machine Learning, and 
         \item Select training hyperparamters.
         \item Train the network.
         \item Repeat steps 4 - 6 until satisfactory performance.
-    \end{itemize}
+    \end{enumerate}
 
 \end{frame}
 
 \begin{frame}
 
-    \frametitle{Acquire the Data}
+    \frametitle{1. Acquire the Data}
 
     \begin{itemize}
         \item Can be a tedious and time consuming process.
@@ -191,7 +192,7 @@ What are the differences between Artificial Intelligence, Machine Learning, and 
 
 \begin{frame}
 
-    \frametitle{Prepare the Data}
+    \frametitle{2. Prepare the Data}
 
     \begin{itemize}
         \item Clean the data
@@ -218,7 +219,7 @@ What are the differences between Artificial Intelligence, Machine Learning, and 
 \end{frame}
 
 \begin{frame}
-    \frametitle{Split the Data}
+    \frametitle{3. Split the Data}
 
     \begin{itemize}
         \item Training Set
@@ -244,7 +245,7 @@ What are the differences between Artificial Intelligence, Machine Learning, and 
 \end{frame}
 
 \begin{frame}
-    \frametitle{Develop Network Architecture}
+    \frametitle{4. Develop Network Architecture}
 
     \begin{itemize}
         \item Start with input and output shape.
@@ -254,12 +255,14 @@ What are the differences between Artificial Intelligence, Machine Learning, and 
         \item examples: size, number, and types of hidden layers.
     \end{itemize}
 
+    \vskip20pt
+
     Skip additional details for now …
 
 \end{frame}
 
 \begin{frame}
-    \frametitle{Select Training Hyperparameters}
+    \frametitle{5. Select Training Hyperparameters}
 
     \begin{itemize}
         \item Hyperparameters include:
@@ -297,7 +300,7 @@ What are the differences between Artificial Intelligence, Machine Learning, and 
 \end{frame}
 
 \begin{frame}
-    \frametitle{Train}
+    \frametitle{6. Train}
 
     \begin{itemize}
         \item Training is a numerical optimization problem.
@@ -318,12 +321,12 @@ What are the differences between Artificial Intelligence, Machine Learning, and 
 
     \begin{itemize}
         \item Use the Keras version of the MNIST dataset:
-        \item Prepocess the data (wont worry out data augmentation for now).
+        \item Prepocess the data (do not worry about data augmentation for now).
         \item Try at least three different architectures.
         \item Try a variety (at least 10) hyperparameter combinations.
         \item Create plots of the learning curves for the different architecture and hyperparameters.
         \item Create a figure showing your predicted from 10 random samples from the testing set.
-        \item Run test set only once you have decided on your best architecture and report value.
+        \item Run test set only once you have decided on your best architecture and report accuracy.
     \end{itemize}
     \vskip20pt
     Some starter code:
