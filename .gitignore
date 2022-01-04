@@ -9,3 +9,5 @@
 *.synctex.gz
 *.toc
 *.fdb_latexmk
+
+*.ipynb_checkpoints
