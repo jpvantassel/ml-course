@@ -36,14 +36,14 @@ The goal of data acquisition is to determine a suitable set of observations
 that are believed to be good indicators of the objective. These observations
 should be organized into a vector for each example or matrix for all examples
 in the training set. The matrix is typically referred to as $X$ and is of shape
-$mxn$ where $m$ is the number of training examples and $n$ is the number of
+$m$ by $n$ where $m$ is the number of training examples and $n$ is the number of
 features per example.
 
 ## Model Selection
 
 For the simplest case the model will involve only using the features represented
 by the matrix $X$ and a parameter vector $\theta$ where $\theta$ is of shape
-$nx1$ (i.e., one parameter (sometimes also called weight) per feature). To make
+$n$ by $1$ (i.e., one parameter (sometimes also called weight) per feature). To make
 a prediction we multiple the features by the parameters. We can do this
 efficiently with a matrix multiplication, that is
 
@@ -64,7 +64,7 @@ functions that can be used for linear regression, but one that has some nice
 mathematical properties is the mean squared error (MSE) cost function. The
 MSE cost function is of the form
 
-$$J_{MSE}(\theta) = \frac{1}{m} \sum_{i=1}^{m} ((X \theta)^{(i)} - y^{(i)})^{2} = \frac{1}{m} (X\theta - y)^T (X\theta - y) $$
+$$J_{MSE}(\theta) = \frac{1}{2m} \sum_{i=1}^{m} ((X \theta)^{(i)} - y^{(i)})^{2} = \frac{1}{2m} (X\theta - y)^T (X\theta - y) $$
 
 where the subscript MSE on the cost function is to specify that this cost
 function is the MSE cost function and to note that other cost functions are
