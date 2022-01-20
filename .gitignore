@@ -12,3 +12,4 @@
 
 *.ipynb_checkpoints
 archive
+.DS_store
